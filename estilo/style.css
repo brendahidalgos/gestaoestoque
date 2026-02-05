@@ -1,0 +1,246 @@
+/* Configurações Gerais */
+:root {
+    --primary: #4361ee;
+    --secondary: #3f37c9;
+    --success: #4cc9f0;
+    --danger: #f72585;
+    --warning: #ff9f1c;
+    --bg: #f8f9fa;
+    --text: #2b2d42;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Card de Cadastro */
+.form-cadastro {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    align-items: end;
+    margin-bottom: 30px;
+}
+
+.form-cadastro input {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.form-cadastro input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+.form-cadastro button {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-cadastro button:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* Barra de Busca */
+.busca-container {
+    margin-bottom: 20px;
+}
+
+#inputBusca {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+/* Tabela Estilizada */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Efeito de linhas separadas */
+}
+
+th {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #888;
+    padding: 15px;
+    text-align: left;
+}
+
+tbody tr {
+    background: var(--white);
+    transition: 0.2s;
+}
+
+tbody tr td {
+    padding: 15px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Arredondar cantos das linhas */
+tbody tr td:first-child { border-left: 1px solid #f0f0f0; border-radius: 10px 0 0 10px; }
+tbody tr td:last-child { border-right: 1px solid #f0f0f0; border-radius: 0 10px 10px 0; }
+
+tbody tr:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Status de Estoque */
+.baixo-estoque {
+    border-left: 5px solid var(--danger) !important;
+}
+
+.baixo-estoque td {
+    background-color: #fff5f8;
+}
+
+/* Badge de Margem */
+.badge-lucro {
+    background: #e7f9ee;
+    color: #28a745;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Botões de Ação */
+.btn-editar { color: var(--primary); text-decoration: none; margin-right: 10px; font-size: 18px; }
+.btn-deletar { color: var(--danger); text-decoration: none; font-size: 18px; }
+.btn-exportar {
+    background-color: #1d6f42; /* Verde Excel */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-exportar:hover {
+    background-color: #155231;
+    box-shadow: 0 4px 12px rgba(29, 111, 66, 0.2);
+}
+/* Badge para lucro positivo (já existente, apenas para referência) */
+.badge-lucro {
+    background: #e7f9ee;
+    color: #28a745;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Nova regra para lucro negativo ou perca */
+.margem-negativa {
+    background: #ffe5e5;
+    color: #dc3545;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: 1px solid #ffcccc;
+}
+
+/* Estilo para a coluna de sugestão */
+td small {
+    font-size: 10px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: -4px;
+}
+/* Botão Aplicar Sugestão no Index */
+.btn-aplicar-quick {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #e7f9ee;
+    color: #28a745;
+    border: 1px solid #28a745;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-aplicar-quick:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Botão Aplicar Sugestão no Editar */
+.btn-aplicar-edit {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background-color: var(--primary); /* Usa a cor azul do seu tema */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-aplicar-edit:hover {
+    filter: brightness(1.2);
+    transform: translateY(-1px);
+}
+.btn-sair {
+    background-color: #f1f5f9;
+    color: #64748b;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-sair:hover {
+    background-color: #fee2e2; /* Vermelho bem clarinho */
+    color: #ef4444;           /* Vermelho de alerta */
+    border-color: #fecaca;
+}
